@@ -128,6 +128,11 @@ alias sudo='sudo '
 alias -g L='| less'
 alias -g G='| grep'
 
+#cdしたらlsする
+chpwd() {
+    ls
+}
+
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 if which pbcopy >/dev/null 2>&1 ; then
@@ -173,7 +178,3 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
     fi
 fi
 
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/binutils/bin:$PATH"
