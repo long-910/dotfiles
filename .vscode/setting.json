@@ -1,0 +1,26 @@
+{
+    "editor.minimap.enabled": false, // ミニマップを非表示にする
+    "editor.renderControlCharacters": true, // 制御文字を表示する
+    "editor.suggestSelection": "first", // サジェスト一覧の初期表示項目設定
+    "breadcrumbs.enabled": true, // ファイルのパンくずリストを表示する
+    "files.insertFinalNewline": true, // ファイルの末尾を改行で終わらせる
+    "editor.experimental.stickyScroll.enabled": true,
+    "workbench.colorCustomizations": {
+        "editorStickyScroll.background": "#121930",//追従の背景色
+        "editorStickyScrollHover.background": "#1d2950",//追従のホバー時背景色
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "blockman.n01LineHeight": 0,
+    "editor.guides.indentation": false,
+    "editor.guides.bracketPairs": false,
+    "editor.fontFamily": "'Fira Code', Hasklig, Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true, // 合字を有効化
+    "editor.fontSize": 14, // フォントサイズを変更
+    "editor.renderLineHighlight": "all", // 選択行の行番号をハイライトする
+    "editor.cursorBlinking": "smooth", // カーソルが滑らかに点滅するように
+    "editor.cursorSmoothCaretAnimation": true, // カーソルの点滅をアニメーション表示する
+    "editor.cursorStyle": "block", // カーソルの外観をブロックに変更
+    "files.autoGuessEncoding": true, // ファイルの自動エンコードを実施
+    "window.zoomLevel": 0, // 画面全体の表示サイズはデフォルト
+    "editor.bracketPairColorization.enabled": true // 括弧の対応を色付ける
+}
