@@ -18,8 +18,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-# Kali Linux風プロンプト
-PROMPT=$'%F{%(#.blue.green)}┌──(%B%F{%(#.red.blue)}%n%(#..㉿)%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
+# プロンプト
+PROMPT=$'%F{%(#.blue.green)}┌──(%B%F{%(#.red.blue)}%n%(#.. @ )%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
