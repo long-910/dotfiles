@@ -16,8 +16,11 @@ else
     exit 1
 fi
 
-# GitHubリポジトリのベースURLを変数に定義
-base_repo_url="https://raw.githubusercontent.com/long-910/dotfiles/main"
+# スクリプトのディレクトリを取得
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# dotfiles フォルダのパス
+dotfiles_dir="$script_dir/dotfiles"
 
 # ステータスメッセージを表示する
 show_status() {
@@ -79,9 +82,9 @@ get_and_apply_config() {
         echo "📁 Backup created for existing $package_name config file: $backup_file"
     fi
     
-    # リポジトリ内のdotfilesディレクトリから設定ファイルを取得
-    curl -fsSL "$base_repo_url/dotfiles/$config_file" -o "${HOME}/${config_file}"
-    exit_on_error $? "Failed to download $package_name configuration file."
+    # dotfiles フォルダから設定ファイルを取得
+    cp "$dotfiles_dir/$config_file" "${HOME}/${config_file}"
+    exit_on_error $? "Failed to copy $package_name configuration file."
     echo "✅ $package_name configuration applied successfully: ${HOME}/${config_file}"
 }
 
