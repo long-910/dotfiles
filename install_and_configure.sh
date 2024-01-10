@@ -39,6 +39,7 @@ exit_on_error() {
 
 # スクリプトの進捗メッセージを表示
 echo "🚀 Script is in progress..."
+echo -e
 
 # 一度だけパッケージマネージャーを更新
 show_status "⚙️  Updating package list"
@@ -48,6 +49,7 @@ else
     sudo $package_manager update
 fi
 exit_on_error $? "Failed to update package list."
+echo -e
 
 # 関数: パッケージのインストール状態を確認して表示する
 check_and_install() {
@@ -91,17 +93,21 @@ get_and_apply_config() {
 # Zshのインストールと設定ファイルの取得・適用
 check_and_install "zsh"
 get_and_apply_config "Zsh" ".zshrc"
+echo -e
 
 # Tmuxのインストールと設定ファイルの取得・適用
 check_and_install "tmux"
 get_and_apply_config "Tmux" ".tmux.conf"
+echo -e
 
 # tmux-mem-cpu-loadのインストール
 check_and_install "tmux-mem-cpu-load"
+echo -e
 
 # Emacsのインストールと設定ファイルの取得・適用
 check_and_install "emacs"
 get_and_apply_config "Emacs" ".emacs.el"
+echo -e
 
 # スクリプトの進捗メッセージを終了
 echo "🎉 Script execution completed!"
