@@ -7,8 +7,8 @@
 1. このリポジトリをクローンします。
 
 ```bash
-git clone https://github.com/your_github_username/your_scripts_repo.git
-cd your_scripts_repo
+git clone [https://github.com/your_github_username/your_scripts_repo.git](https://github.com/long-910/dotfiles.git)
+cd dotfiles
 ```
 
 2. `install_and_configure.sh` スクリプトを実行可能にします。
