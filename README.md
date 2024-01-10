@@ -37,4 +37,4 @@ chmod +x install_and_configure.sh
 
 ## ライセンス
 
-## このスクリプトは MIT ライセンスのもとで提供されています。詳細については [LICENSE](LICENSE) をご覧ください。
+このスクリプトは MIT ライセンスのもとで提供されています。詳細については [LICENSE](LICENSE) をご覧ください。
