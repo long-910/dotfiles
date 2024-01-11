@@ -31,9 +31,9 @@ show_status() {
 exit_on_error() {
     local exit_code=$1
     local error_message=$2
-    if [ $exit_code -ne 0 ]; then
+    if [ "$exit_code" -ne 0 ]; then
         echo -e "\033[1;31mError: $error_message\033[0m"
-        exit $exit_code
+        exit "$exit_code"
     fi
 }
 
@@ -55,15 +55,15 @@ echo -e
 check_and_install() {
     package_name=$1
     show_status "⚙️  Checking $package_name"
-    if command -v $package_name &> /dev/null; then
+    if command -v "$package_name" &> /dev/null; then
         installed_version=$($package_name --version)
         echo "✅ $package_name is already installed (Version: $installed_version)"
     else
         show_status "🔧 Installing $package_name"
         if [[ "$package_manager" == "brew" ]]; then
-            brew install $package_name
+            brew install "$package_name"
         else
-            sudo $package_manager install -y $package_name
+            sudo $package_manager install -y "$package_name"
         fi
         exit_on_error $? "Failed to install $package_name."
         installed_version=$($package_name --version)
