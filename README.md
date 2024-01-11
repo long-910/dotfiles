@@ -1,3 +1,5 @@
+[![Linux](https://github.com/long-910/dotfiles/actions/workflows/linux.yml/badge.svg)](https://github.com/long-910/dotfiles/actions/workflows/linux.yml)
+
 # インストールと設定ファイル適用スクリプト
 
 このスクリプトは、Zsh、Tmux、Emacs、および `tmux-mem-cpu-load` をインストールし、指定の GitHub リポジトリからそれぞれの設定ファイルを取得・適用します。
