@@ -1,3 +1,4 @@
+[![MacOS](https://github.com/long-910/dotfiles/actions/workflows/macos.yml/badge.svg)](https://github.com/long-910/dotfiles/actions/workflows/macos.yml)
 [![Linux](https://github.com/long-910/dotfiles/actions/workflows/linux.yml/badge.svg)](https://github.com/long-910/dotfiles/actions/workflows/linux.yml)
 
 # インストールと設定ファイル適用スクリプト
