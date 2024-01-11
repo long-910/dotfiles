@@ -11,7 +11,10 @@
 1. このリポジトリをクローンします。
 
 ```bash
-git clone [https://github.com/your_github_username/your_scripts_repo.git](https://github.com/long-910/dotfiles.git)
+git clone https://github.com/long-910/dotfiles.git
+```
+
+```bash
 cd dotfiles
 ```
 
