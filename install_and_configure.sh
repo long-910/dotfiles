@@ -101,8 +101,8 @@ get_and_apply_config "Tmux" ".tmux.conf"
 echo -e
 
 # tmux-mem-cpu-loadのインストール
-check_and_install "tmux-mem-cpu-load"
-echo -e
+# check_and_install "tmux-mem-cpu-load"
+# echo -e
 
 # Emacsのインストールと設定ファイルの取得・適用
 check_and_install "emacs"
