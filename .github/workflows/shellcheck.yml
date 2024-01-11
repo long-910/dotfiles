@@ -22,4 +22,4 @@ jobs:
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@master
         with:
-          ignore_names: dotfiles/.zshrc
+          ignore_names: .zshrc
