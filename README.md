@@ -9,6 +9,7 @@
 - [tmux](Doc/Tmux.md)
 - [emacs](Doc/emacs.md)
 - [zsh](Doc/zsh.md)
+- [neofetch](Doc/neofetch.md)
 
 ## 使用方法
 

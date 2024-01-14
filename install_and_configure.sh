@@ -124,5 +124,9 @@ if command -v "tmux-mem-cpu-load" &> /dev/null; then
         echo "✅ tmux-mem-cpu-load installed successfully"
     fi
 
+# neofetchのインストールと設定ファイルの取得・適用
+check_and_install "neofetch"
+echo -e
+
 # スクリプトの進捗メッセージを終了
 echo "🎉 Script execution completed!"
