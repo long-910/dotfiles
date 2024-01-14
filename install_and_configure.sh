@@ -123,6 +123,11 @@ if command -v "tmux-mem-cpu-load" &> /dev/null; then
         exit_on_error $? "Failed to install tmux-mem-cpu-load"
         echo "✅ tmux-mem-cpu-load installed successfully"
     fi
+echo -e
+
+# htopのインストールと設定ファイルの取得・適用
+check_and_install "htop"
+echo -e
 
 # スクリプトの進捗メッセージを終了
 echo "🎉 Script execution completed!"

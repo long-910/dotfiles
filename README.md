@@ -9,6 +9,7 @@
 - [tmux](Doc/Tmux.md)
 - [emacs](Doc/emacs.md)
 - [zsh](Doc/zsh.md)
+- [htop](Doc/htop.md)
 
 ## 使用方法
 
