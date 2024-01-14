@@ -10,6 +10,7 @@
 - [emacs](Doc/emacs.md)
 - [zsh](Doc/zsh.md)
 - [htop](Doc/htop.md)
+- [neofetch](Doc/neofetch.md)
 
 ## 使用方法
 
