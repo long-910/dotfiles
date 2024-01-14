@@ -95,19 +95,34 @@ check_and_install "zsh"
 get_and_apply_config "Zsh" ".zshrc"
 echo -e
 
+# Emacsのインストールと設定ファイルの取得・適用
+check_and_install "emacs"
+get_and_apply_config "Emacs" ".emacs.el"
+echo -e
+
 # Tmuxのインストールと設定ファイルの取得・適用
 check_and_install "tmux"
 get_and_apply_config "Tmux" ".tmux.conf"
 echo -e
 
 # tmux-mem-cpu-loadのインストール
-# check_and_install "tmux-mem-cpu-load"
-# echo -e
-
-# Emacsのインストールと設定ファイルの取得・適用
-check_and_install "emacs"
-get_and_apply_config "Emacs" ".emacs.el"
-echo -e
+show_status "⚙️  Checking tmux-mem-cpu-load"
+if command -v "tmux-mem-cpu-load" &> /dev/null; then
+        echo "✅ tmux-mem-cpu-load is already installed"
+    else
+        show_status "🔧 Installing tmux-mem-cpu-load"
+        if [[ "$package_manager" == "brew" ]]; then
+            brew install tmux-mem-cpu-load
+        else
+            git clone https://github.com/thewtex/tmux-mem-cpu-load.git
+            cd tmux-mem-cpu-load || exit
+            cmake .
+            make
+            sudo make install
+        fi
+        exit_on_error $? "Failed to install tmux-mem-cpu-load"
+        echo "✅ tmux-mem-cpu-load installed successfully"
+    fi
 
 # スクリプトの進捗メッセージを終了
 echo "🎉 Script execution completed!"
