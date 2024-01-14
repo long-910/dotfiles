@@ -38,7 +38,8 @@ chmod +x install_and_configure.sh
 
 4. スクリプトが実行されると、Zsh、Tmux、Emacs、および `tmux-mem-cpu-load` がインストールされ、それぞれの設定ファイルが指定の GitHub リポジトリから取得・適用されます。
 
-> [!TIP] > `tmux-mem-cpu-load` は Tmux でメモリと CPU の使用状況を表示するツールです。インストール後、Tmux を起動した際に画面の右下にメモリ使用量と CPU 使用率が表示されます。
+> [!TIP]
+> `tmux-mem-cpu-load` は Tmux でメモリと CPU の使用状況を表示するツールです。インストール後、Tmux を起動した際に画面の右下にメモリ使用量と CPU 使用率が表示されます。
 
 > [!CAUTION]
 >
