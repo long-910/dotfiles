@@ -90,9 +90,15 @@ get_and_apply_config() {
     echo "✅ $package_name configuration applied successfully: ${HOME}/${config_file}"
 }
 
+# lsd
+check_and_install "lsd"
+echo -e
+
 # Zshのインストールと設定ファイルの取得・適用
 check_and_install "zsh"
 get_and_apply_config "Zsh" ".zshrc"
+# shellcheck source=/dev/null
+source "${HOME}/.zshrc"
 echo -e
 
 # Emacsのインストールと設定ファイルの取得・適用

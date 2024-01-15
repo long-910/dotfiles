@@ -116,8 +116,13 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 ########################################
 # エイリアス
-alias la='ls -a'
+alias ls='lsd'
+alias l='ls -l'
 alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+alias llt='ll --tree'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -146,23 +151,7 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
-#alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-
 ########################################
-# OS 別の設定
-case ${OSTYPE} in
-    darwin*)
-	#Mac用の設定
-	export CLICOLOR=1
-	alias ls='ls -G -F'
-	;;
-    linux*)
-	#Linux用の設定
-	;;
-esac
-
-# vim:set ft=zsh:
-
 # tmuxを自動起動する
 if [ -z "$TMUX" -a -z "$STY" ]; then
     if type tmuxx >/dev/null 2>&1; then
@@ -177,4 +166,3 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
 	screen -rx || screen -D -RR
     fi
 fi
-
