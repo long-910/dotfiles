@@ -63,7 +63,11 @@ check_and_install() {
         if [[ "$package_manager" == "brew" ]]; then
             brew install "$package_name"
         else
-            sudo $package_manager install -y "$package_name"
+            if ! sudo $package_manager install -y "$package_name"
+            then
+                echo "Failed to install $package_name using $package_manager."
+                sudo snap install "$package_name"
+            fi
         fi
         exit_on_error $? "Failed to install $package_name."
         installed_version=$($package_name --version)
@@ -90,9 +94,15 @@ get_and_apply_config() {
     echo "✅ $package_name configuration applied successfully: ${HOME}/${config_file}"
 }
 
+# lsd
+check_and_install "lsd"
+echo -e
+
 # Zshのインストールと設定ファイルの取得・適用
 check_and_install "zsh"
 get_and_apply_config "Zsh" ".zshrc"
+# shellcheck source=/dev/null
+source "${HOME}/.zshrc"
 echo -e
 
 # Emacsのインストールと設定ファイルの取得・適用
