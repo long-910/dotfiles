@@ -1,6 +1,8 @@
 [![MacOS](https://github.com/long-910/dotfiles/actions/workflows/macos.yml/badge.svg)](https://github.com/long-910/dotfiles/actions/workflows/macos.yml)
 [![Linux](https://github.com/long-910/dotfiles/actions/workflows/linux.yml/badge.svg)](https://github.com/long-910/dotfiles/actions/workflows/linux.yml)
 [![ShellCheck](https://github.com/long-910/dotfiles/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/long-910/dotfiles/actions/workflows/shellcheck.yml)
+[![License](https://img.shields.io/github/license/long-910/dotfiles)](https://github.com/long-910/dotfiles/blob/main/LICENSE)
+
 
 # インストールと設定ファイル適用スクリプト
 
