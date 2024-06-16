@@ -143,5 +143,9 @@ echo -e
 check_and_install "neofetch"
 echo -e
 
+# neofetchのインストールと設定ファイルの取得・適用
+check_and_install "yazi"
+echo -e
+
 # スクリプトの進捗メッセージを終了
 echo "🎉 Script execution completed!"

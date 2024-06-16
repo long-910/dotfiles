@@ -13,6 +13,7 @@
 - [zsh](Doc/zsh.md)
 - [htop](Doc/htop.md)
 - [neofetch](Doc/neofetch.md)
+- [yazi](Doc/yazi.md)
 
 ## 使用方法
 
