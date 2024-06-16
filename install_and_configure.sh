@@ -68,6 +68,11 @@ check_and_install() {
                 echo "Failed to install $package_name using $package_manager."
                 sudo snap install "$package_name"
             fi
+            if [[ "$package_name" == "yazi" ]]; then
+                curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+                rustup update
+                cargo install --locked yazi-fm yazi-cli
+            fi
         fi
         exit_on_error $? "Failed to install $package_name."
         installed_version=$($package_name --version)
@@ -141,6 +146,10 @@ echo -e
 
 # neofetchのインストールと設定ファイルの取得・適用
 check_and_install "neofetch"
+echo -e
+
+# neofetchのインストールと設定ファイルの取得・適用
+check_and_install "yazi"
 echo -e
 
 # スクリプトの進捗メッセージを終了
