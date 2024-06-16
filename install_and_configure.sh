@@ -68,6 +68,11 @@ check_and_install() {
                 echo "Failed to install $package_name using $package_manager."
                 sudo snap install "$package_name"
             fi
+            if [[ "$package_name" == "yazi" ]]; then
+                curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+                rustup update
+                cargo install --locked yazi-fm yazi-cli
+            fi
         fi
         exit_on_error $? "Failed to install $package_name."
         installed_version=$($package_name --version)
