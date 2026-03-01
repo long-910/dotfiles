@@ -15,7 +15,7 @@ dotfiles/
 ├── install_and_configure.sh   ← ORIGINAL: monolithic installer (DO NOT MODIFY — CI uses it)
 ├── modules/
 │   ├── lib.sh                 ← shared helpers (colors, OS detect, pkg_install, backup)
-│   ├── core.sh                ← existing tools: zsh/tmux/lsd/emacs/htop/neofetch/yazi
+│   ├── core.sh                ← existing tools: zsh/tmux/lsd/emacs/htop/neofetch/yazi + tmux.zsh
 │   ├── shell.sh               ← starship, fzf, zoxide, atuin
 │   ├── dev.sh                 ← gh, ripgrep, direnv, bat, delta, fd, jq, lazygit
 │   ├── node.sh                ← fnm + Node LTS + commitizen
@@ -27,6 +27,7 @@ dotfiles/
 │   ├── .gitmessage            ← conventional commit template
 │   ├── .zshrc.local.example   ← secrets/local config template (copy to ~/.zshrc.local)
 │   └── .zshrc.d/
+│       ├── tmux.zsh           ← auto-attach to tmux session on shell start
 │       ├── fzf.zsh            ← fzf keybindings + rg integration + helpers
 │       ├── zoxide.zsh         ← eval "$(zoxide init zsh)"
 │       ├── starship.zsh       ← eval "$(starship init zsh)"

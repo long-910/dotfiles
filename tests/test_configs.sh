@@ -14,7 +14,7 @@ run_tests() {
   done
 
   # ── .zshrc.d files ──────────────────────────────────────────────────────────
-  for _f in fzf.zsh zoxide.zsh starship.zsh atuin.zsh direnv.zsh node.zsh docker.zsh commit.zsh; do
+  for _f in tmux.zsh fzf.zsh zoxide.zsh starship.zsh atuin.zsh direnv.zsh node.zsh docker.zsh commit.zsh; do
     assert_file_exists ".zshrc.d/${_f}" "${r}/dotfiles/.zshrc.d/${_f}"
   done
 
