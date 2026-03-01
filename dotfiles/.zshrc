@@ -162,3 +162,8 @@ if [ -d "$HOME/.zshrc.d" ]; then
 fi
 # Load machine-specific / secret config (never committed)
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
+
+# tmux auto-attach: attach to 'tmux-dev' session (create if missing)
+if command -v tmux &>/dev/null && [ -z "$TMUX" ] && [[ $- == *i* ]]; then
+  tmux new-session -As tmux-dev
+fi
