@@ -67,13 +67,26 @@ _install_zoxide() {
 _install_atuin() {
   if has_cmd atuin; then
     info "atuin already installed"
-    return
-  fi
-  info "Installing atuin..."
-  if [ "$PKG_MGR" = "brew" ]; then
-    brew install atuin
   else
-    curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+    info "Installing atuin..."
+    if [ "$PKG_MGR" = "brew" ]; then
+      brew install atuin
+    else
+      # ATUIN_NO_MODIFY_SHELL=1 prevents atuin's installer from appending
+      # init code to ~/.zshrc — our .zshrc.d/atuin.zsh handles that instead.
+      ATUIN_NO_MODIFY_SHELL=1 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | ATUIN_NO_MODIFY_SHELL=1 sh
+    fi
+  fi
+
+  # Remove any lines atuin's installer may have already appended to ~/.zshrc.
+  # These duplicate the .zshrc.d/atuin.zsh setup and cause
+  # "(eval):1: can't change option: zle" on every shell start.
+  if grep -q '\.atuin/bin/env\|atuin init' "${HOME}/.zshrc" 2>/dev/null; then
+    info "Removing duplicate atuin init lines from ~/.zshrc..."
+    sed -i '/^\. ".*\.atuin\/bin\/env"/d' "${HOME}/.zshrc"
+    # shellcheck disable=SC2016  # $() in single quotes is intentional (literal match)
+    sed -i '/^eval "\$(atuin init/d'      "${HOME}/.zshrc"
+    success "Cleaned up ~/.zshrc"
   fi
 }
 
