@@ -4,7 +4,7 @@
 format = """
 $username\
 $hostname\
-[┌──(](bold green)$username[@](bold green)$hostname[)─[](bold green)$directory[$git_branch$git_status](bold green)[]\n](bold green)\
+[┌──\\(](bold green)$username[@](bold green)$hostname[\\)─\\[](bold green)$directory[$git_branch$git_status](bold green)[\\]](bold green)\n\
 $git_state\
 $nodejs$python$rust$golang\
 $cmd_duration\
