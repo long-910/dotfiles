@@ -35,15 +35,15 @@ FEATURE_SELECTED=(1 1 1 0 0)
 print_banner() {
   detect_os
   printf "\n"
-  printf "${BOLD}╔══════════════════════════════════════════════════════════════╗${RESET}\n"
-  printf "${BOLD}║           dotfiles bootstrap — long-910/dotfiles             ║${RESET}\n"
-  printf "${BOLD}╚══════════════════════════════════════════════════════════════╝${RESET}\n"
+  printf "%s╔══════════════════════════════════════════════════════════════╗%s\n" "$BOLD" "$RESET"
+  printf "%s║           dotfiles bootstrap — long-910/dotfiles             ║%s\n" "$BOLD" "$RESET"
+  printf "%s╚══════════════════════════════════════════════════════════════╝%s\n" "$BOLD" "$RESET"
   printf "  OS: ${GREEN}%s${RESET}   Package manager: ${GREEN}%s${RESET}\n\n" "$OS" "$PKG_MGR"
 }
 
 # ── Interactive menu ───────────────────────────────────────────────────────────
 print_menu() {
-  printf "  ${BOLD}機能ブロック選択 / Feature Selection${RESET}\n"
+  printf "  %s機能ブロック選択 / Feature Selection%s\n" "$BOLD" "$RESET"
   printf "  %s\n" "────────────────────────────────────────────────────────────"
   local i=0
   for name in "${FEATURE_NAMES[@]}"; do
@@ -84,10 +84,10 @@ run_menu() {
         for tok in $input; do
           if printf '%s' "$tok" | grep -qE '^[1-5]$'; then
             local idx=$((tok - 1))
-            if [ "${FEATURE_SELECTED[$idx]}" = "1" ]; then
-              FEATURE_SELECTED[$idx]=0
+            if [ "${FEATURE_SELECTED[idx]}" = "1" ]; then
+              FEATURE_SELECTED[idx]=0
             else
-              FEATURE_SELECTED[$idx]=1
+              FEATURE_SELECTED[idx]=1
             fi
           fi
         done
@@ -143,7 +143,7 @@ main() {
       FEATURE_SELECTED=(0 0 0 0 0)
       local i=0
       for name in "${FEATURE_NAMES[@]}"; do
-        [ "$name" = "$mod" ] && FEATURE_SELECTED[$i]=1
+        [ "$name" = "$mod" ] && FEATURE_SELECTED[i]=1
         i=$((i + 1))
       done
       install_selected
@@ -173,7 +173,7 @@ main() {
 
   printf "\n"
   success "Bootstrap complete!"
-  printf "\n  Run: ${BOLD}source ~/.zshrc${RESET}   to apply changes in your current shell.\n\n"
+  printf "\n  Run: %ssource ~/.zshrc%s   to apply changes in your current shell.\n\n" "$BOLD" "$RESET"
 }
 
 main "$@"

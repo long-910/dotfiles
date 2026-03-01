@@ -1,3 +1,4 @@
+# shellcheck shell=zsh
 # ~/.zshrc.d/fzf.zsh — fzf keybindings and helpers
 
 # Source fzf shell integration (try common locations)
@@ -10,6 +11,7 @@ if command -v fzf >/dev/null 2>&1; then
       "${HOME}/.fzf.zsh" \
       /usr/share/doc/fzf/examples/key-bindings.zsh \
       /opt/homebrew/opt/fzf/shell/key-bindings.zsh; do
+      # shellcheck disable=SC1090
       [ -r "$_fzf_src" ] && source "$_fzf_src" && break
     done
     unset _fzf_src
