@@ -151,3 +151,14 @@ function yy() {
     fi
     rm -f -- "$tmp"
 }
+
+# === dotfiles modular config ===
+# Load per-tool configs from ~/.zshrc.d/ (added by bootstrap.sh)
+if [ -d "$HOME/.zshrc.d" ]; then
+  for _f in "$HOME/.zshrc.d"/*.zsh; do
+    [ -r "$_f" ] && . "$_f"
+  done
+  unset _f
+fi
+# Load machine-specific / secret config (never committed)
+[ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"

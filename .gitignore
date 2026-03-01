@@ -1,3 +1,13 @@
+# Secrets and local config (never commit)
+.zshrc.local
+*.local
+.env
+.envrc
+.envrc.local
+__pycache__/
+node_modules/
+.node_version
+
 # Compiled
 *.elc
 

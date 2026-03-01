@@ -1,0 +1,28 @@
+# <type>(<scope>): <subject>
+# |←----- 50 chars max -------------------------------------------→|
+#
+# Types:
+#   feat     A new feature
+#   fix      A bug fix
+#   docs     Documentation only changes
+#   style    Formatting, missing semicolons (no logic change)
+#   refactor Code change that is neither fix nor feature
+#   test     Adding or updating tests
+#   chore    Build process, dependency updates, tooling
+#   perf     Performance improvements
+#   ci       CI/CD configuration changes
+#   build    Build system changes
+#
+# Scope (optional): component or area affected (e.g., auth, api, ui)
+#
+# Subject: imperative mood, lowercase, no period at end
+#
+# ── Body (optional, 72 chars/line) ────────────────────────────────────────────
+#
+# Explain WHY the change was made and what problem it solves.
+# Not HOW (the code shows that).
+#
+# ── Footer (optional) ─────────────────────────────────────────────────────────
+#
+# Reference issues: Closes #123, Fixes #456
+# Breaking changes: BREAKING CHANGE: <description>

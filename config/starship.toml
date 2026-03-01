@@ -1,0 +1,104 @@
+# config/starship.toml — Starship prompt configuration
+# Two-line prompt matching existing .zshrc style
+
+format = """
+$username\
+$hostname\
+[┌──(](bold green)$username[@](bold green)$hostname[)─[](bold green)$directory[$git_branch$git_status](bold green)[]\n](bold green)\
+$git_state\
+$nodejs$python$rust$golang\
+$cmd_duration\
+$line_break\
+[└─](bold green)$character"""
+
+# Prompt character
+[character]
+success_symbol = "[❯](bold blue)"
+error_symbol   = "[❯](bold red)"
+vimcmd_symbol  = "[❮](bold green)"
+
+# Directory
+[directory]
+style            = "bold reset"
+truncation_length = 4
+truncate_to_repo  = true
+format           = "[$path]($style)[$read_only]($read_only_style)"
+
+# Username — show only in SSH sessions
+[username]
+show_always = false
+format      = "[$user]($style)"
+style_user  = "bold blue"
+
+# Hostname — show only in SSH sessions
+[hostname]
+ssh_only = true
+format   = "[@$hostname]($style)"
+style    = "bold blue"
+
+# Git branch
+[git_branch]
+format = " [$symbol$branch(:$remote_branch)]($style)"
+style  = "bold purple"
+symbol = " "
+
+# Git status
+[git_status]
+format    = "[$all_status$ahead_behind]($style) "
+style     = "bold red"
+conflicted = "⚡"
+ahead      = "⇡${count}"
+behind     = "⇣${count}"
+diverged   = "⇡${ahead_count}⇣${behind_count}"
+untracked  = "?"
+modified   = "!"
+staged     = "+"
+renamed    = "»"
+deleted    = "✘"
+
+# Git state (rebase, merge, etc.)
+[git_state]
+format = "[$state($progress_current/$progress_total)]($style) "
+style  = "bold yellow"
+
+# Node.js — show only when relevant files present
+[nodejs]
+format   = "[ $version]($style) "
+style    = "bold green"
+detect_files    = ["package.json", ".nvmrc", ".node-version"]
+detect_folders  = ["node_modules"]
+detect_extensions = ["js", "mjs", "cjs", "ts"]
+
+# Python — show only when relevant
+[python]
+format             = "[ $version]($style) "
+style              = "bold yellow"
+detect_extensions  = ["py"]
+detect_files       = ["requirements.txt", "pyproject.toml", "setup.py", "Pipfile"]
+
+# Rust
+[rust]
+format   = "[ $version]($style) "
+style    = "bold red"
+detect_extensions = ["rs"]
+detect_files      = ["Cargo.toml"]
+
+# Go
+[golang]
+format   = "[ $version]($style) "
+style    = "bold cyan"
+detect_extensions = ["go"]
+detect_files      = ["go.mod"]
+
+# Command duration — show for commands > 2s
+[cmd_duration]
+min_time = 2000
+format   = "[ $duration]($style) "
+style    = "bold yellow"
+
+# Disable modules we don't use
+[package]
+disabled = true
+
+[time]
+disabled = true
