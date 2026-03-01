@@ -1,4 +1,4 @@
-# shellcheck shell=zsh
+# shellcheck shell=bash
 # ~/.zshrc.d/atuin.zsh — Atuin shell history
 # --disable-up-arrow keeps default ↑ behavior; use Ctrl-R for atuin search
 

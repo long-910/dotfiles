@@ -1,4 +1,4 @@
-# shellcheck shell=zsh
+# shellcheck shell=bash
 # ~/.zshrc.d/docker.zsh — Docker aliases and helpers
 
 if command -v docker >/dev/null 2>&1; then

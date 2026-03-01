@@ -1,4 +1,4 @@
-# shellcheck shell=zsh
+# shellcheck shell=bash
 # ~/.zshrc.d/starship.zsh — Starship prompt
 
 if command -v starship >/dev/null 2>&1; then

@@ -1,4 +1,4 @@
-# shellcheck shell=zsh
+# shellcheck shell=bash
 # ~/.zshrc.d/fzf.zsh — fzf keybindings and helpers
 
 # Source fzf shell integration (try common locations)

@@ -1,4 +1,4 @@
-# shellcheck shell=zsh
+# shellcheck shell=bash
 # ~/.zshrc.d/commit.zsh — Git aliases and conventional commit helper
 
 if command -v git >/dev/null 2>&1; then
