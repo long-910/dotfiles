@@ -110,7 +110,7 @@ bash bootstrap.sh --list                # List modules
 |------|-------------|
 | [tmux](https://github.com/tmux/tmux) | Terminal multiplexer. Auto-starts on login; exit tmux to close the shell |
 
-tmux starts automatically when you open a new terminal and attaches to (or creates) a session named `main`. Closing tmux also exits the shell. To disable, remove `~/.zshrc.d/tmux.zsh`.
+tmux starts automatically when you open a new terminal and attaches to the most recent existing session, or creates a new one. Closing tmux also exits the shell. To disable, remove `~/.zshrc.d/tmux.zsh`.
 
 ### File Management
 

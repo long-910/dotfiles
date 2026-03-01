@@ -10,6 +10,7 @@ export DOTFILES_ROOT
 
 # ── Files we own in ~/.zshrc.d ─────────────────────────────────────────────────
 ZSHRC_D_FILES=(
+  tmux.zsh
   fzf.zsh
   zoxide.zsh
   starship.zsh

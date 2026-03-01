@@ -8,6 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+---
+
+## [0.5.0] - 2026-03-01
+
+### Added
+- **Kali Linux style starship prompt** (`config/starship.toml`): two-line prompt with `┌──(user@host)─[dir git]` / `└─$` layout; always shows username and hostname; git branch/status, Node/Python/Rust/Go version indicators
+- **tmux auto-attach** (`dotfiles/.zshrc.d/tmux.zsh`): attaches to the most recent existing session on shell start, or creates a new one; uses `exec` so closing tmux exits the shell; skips VSCode terminal
+
 ### Fixed
 - ShellCheck CI: add `# shellcheck shell=bash` directive to all `dotfiles/.zshrc.d/*.zsh` files (SC2148, SC1103)
 - ShellCheck CI: add `# shellcheck disable=SC1090` for non-constant `source` in `fzf.zsh` (SC1090)
@@ -17,6 +25,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - ShellCheck CI: replace `# shellcheck source=` with `# shellcheck disable=SC1091` in `uninstall.sh` (SC1091)
 - Linux CI: make `yazi` cargo build failure non-fatal in `modules/core.sh`
 - Linux CI: pre-install `yazi` binary from GitHub releases in workflow to avoid `cargo` compile failure
+
+### Maintenance
+- `dotfiles/.zshrc`: remove duplicate tmux auto-attach block (superseded by `tmux.zsh`)
+- `uninstall.sh`: add `tmux.zsh` to `ZSHRC_D_FILES` so it is removed on uninstall
+- `tests/test_configs.sh`: add `tmux.zsh` to `.zshrc.d` file existence check
+- `README.md/ja/zh`: fix tmux session description (removed incorrect "named `main`" reference)
+- `CLAUDE.md`: add `tmux.zsh` to `.zshrc.d/` structure listing
 
 ---
 

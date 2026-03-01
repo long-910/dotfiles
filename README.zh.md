@@ -109,7 +109,7 @@ bash bootstrap.sh --list                # 列出所有模块
 |------|------|
 | [tmux](https://github.com/tmux/tmux) | 终端复用器。登录时自动启动；退出 tmux 同时退出 Shell |
 
-打开新终端时 tmux 会自动启动，并附加到名为 `main` 的会话（不存在则创建）。关闭 tmux 时 Shell 也会一并退出。如需禁用，请删除 `~/.zshrc.d/tmux.zsh`。
+打开新终端时 tmux 会自动启动，并附加到最近的现有会话（不存在则创建新会话）。关闭 tmux 时 Shell 也会一并退出。如需禁用，请删除 `~/.zshrc.d/tmux.zsh`。
 
 ### 文件管理
 
