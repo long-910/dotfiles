@@ -2,6 +2,7 @@
 [![macOS](https://github.com/long-910/dotfiles/actions/workflows/macos.yml/badge.svg)](https://github.com/long-910/dotfiles/actions/workflows/macos.yml)
 [![ShellCheck](https://github.com/long-910/dotfiles/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/long-910/dotfiles/actions/workflows/shellcheck.yml)
 [![License](https://img.shields.io/github/license/long-910/dotfiles)](https://github.com/long-910/dotfiles/blob/main/LICENSE)
+[![Sponsor](https://img.shields.io/badge/Sponsor-GitHub-pink?logo=github)](https://github.com/sponsors/long-910)
 
 [English](README.md) | [日本語](README.ja.md) | [中文](README.zh.md)
 
@@ -14,7 +15,27 @@ Select and install only the feature blocks you need via an interactive menu.
 
 ## Quick Start
 
-### bootstrap.sh (Recommended)
+### One-line install (curl)
+
+Clone and run the interactive installer in one command:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/long-910/dotfiles/main/install.sh | bash
+```
+
+To install everything non-interactively:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/long-910/dotfiles/main/install.sh | bash -s -- --all
+```
+
+The repository is cloned to `~/.dotfiles`. Set `DOTFILES_DIR` to override the location:
+
+```bash
+DOTFILES_DIR=~/my-dotfiles curl -fsSL https://raw.githubusercontent.com/long-910/dotfiles/main/install.sh | bash
+```
+
+### bootstrap.sh (git clone)
 
 Select feature blocks from an interactive menu.
 
@@ -82,6 +103,14 @@ bash bootstrap.sh --list                # List modules
 | [fd](https://github.com/sharkdp/fd) | Fast `find` alternative |
 | [jq](https://jqlang.github.io/jq/) | Command-line JSON processor |
 | [lazygit](https://github.com/jesseduffield/lazygit) | Terminal UI for git |
+
+### Terminal Multiplexer
+
+| Tool | Description |
+|------|-------------|
+| [tmux](https://github.com/tmux/tmux) | Terminal multiplexer. Auto-starts on login; exit tmux to close the shell |
+
+tmux starts automatically when you open a new terminal and attaches to (or creates) a session named `main`. Closing tmux also exits the shell. To disable, remove `~/.zshrc.d/tmux.zsh`.
 
 ### File Management
 

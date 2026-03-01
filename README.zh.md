@@ -2,6 +2,7 @@
 [![macOS](https://github.com/long-910/dotfiles/actions/workflows/macos.yml/badge.svg)](https://github.com/long-910/dotfiles/actions/workflows/macos.yml)
 [![ShellCheck](https://github.com/long-910/dotfiles/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/long-910/dotfiles/actions/workflows/shellcheck.yml)
 [![License](https://img.shields.io/github/license/long-910/dotfiles)](https://github.com/long-910/dotfiles/blob/main/LICENSE)
+[![Sponsor](https://img.shields.io/badge/Sponsor-GitHub-pink?logo=github)](https://github.com/sponsors/long-910)
 
 [English](README.md) | [日本語](README.ja.md) | [中文](README.zh.md)
 
@@ -14,7 +15,27 @@
 
 ## 快速开始
 
-### bootstrap.sh（推荐）
+### 一键安装（curl）
+
+用一条命令克隆并启动交互式安装程序：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/long-910/dotfiles/main/install.sh | bash
+```
+
+非交互式安装所有模块：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/long-910/dotfiles/main/install.sh | bash -s -- --all
+```
+
+仓库将克隆到 `~/.dotfiles`，可通过 `DOTFILES_DIR` 自定义路径：
+
+```bash
+DOTFILES_DIR=~/my-dotfiles curl -fsSL https://raw.githubusercontent.com/long-910/dotfiles/main/install.sh | bash
+```
+
+### bootstrap.sh（git clone）
 
 通过交互式菜单选择功能模块进行安装。
 
@@ -81,6 +102,14 @@ bash bootstrap.sh --list                # 列出所有模块
 | [fd](https://github.com/sharkdp/fd) | 高速 `find` 替代 |
 | [jq](https://jqlang.github.io/jq/) | 命令行 JSON 处理器 |
 | [lazygit](https://github.com/jesseduffield/lazygit) | git 的终端 UI |
+
+### 终端复用器
+
+| 工具 | 说明 |
+|------|------|
+| [tmux](https://github.com/tmux/tmux) | 终端复用器。登录时自动启动；退出 tmux 同时退出 Shell |
+
+打开新终端时 tmux 会自动启动，并附加到名为 `main` 的会话（不存在则创建）。关闭 tmux 时 Shell 也会一并退出。如需禁用，请删除 `~/.zshrc.d/tmux.zsh`。
 
 ### 文件管理
 

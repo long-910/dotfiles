@@ -105,4 +105,5 @@ _deploy_core_configs() {
   deploy_config ".zshrc"    "${HOME}/.zshrc"
   deploy_config ".tmux.conf" "${HOME}/.tmux.conf"
   deploy_config ".emacs.el"  "${HOME}/.emacs.el"
+  deploy_zshrc_d "tmux.zsh"
 }
