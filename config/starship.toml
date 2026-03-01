@@ -1,20 +1,17 @@
 # config/starship.toml — Starship prompt configuration
-# Two-line prompt matching existing .zshrc style
+# Kali Linux style: ┌──(user@host)-[dir git]\n└─$
 
 format = """
-$username\
-$hostname\
 [┌──\\(](bold green)$username[@](bold green)$hostname[\\)─\\[](bold green)$directory[$git_branch$git_status](bold green)[\\]](bold green)\n\
 $git_state\
 $nodejs$python$rust$golang\
 $cmd_duration\
-$line_break\
 [└─](bold green)$character"""
 
-# Prompt character
+# Prompt character — $ for user, # for root (Kali style)
 [character]
-success_symbol = "[❯](bold blue)"
-error_symbol   = "[❯](bold red)"
+success_symbol = "[\\$](bold blue)"
+error_symbol   = "[\\$](bold red)"
 vimcmd_symbol  = "[❮](bold green)"
 
 # Directory
@@ -24,16 +21,17 @@ truncation_length = 4
 truncate_to_repo  = true
 format           = "[$path]($style)[$read_only]($read_only_style)"
 
-# Username — show only in SSH sessions
+# Username — always visible (Kali style)
 [username]
-show_always = false
+show_always = true
 format      = "[$user]($style)"
 style_user  = "bold blue"
+style_root  = "bold red"
 
-# Hostname — show only in SSH sessions
+# Hostname — always visible (Kali style)
 [hostname]
-ssh_only = true
-format   = "[@$hostname]($style)"
+ssh_only = false
+format   = "[$hostname]($style)"
 style    = "bold blue"
 
 # Git branch
