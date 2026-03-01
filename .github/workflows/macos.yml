@@ -1,29 +1,33 @@
-# This is a basic workflow to help you get started with Actions
+name: macOS
 
-name: MacOS
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches: ["main"]
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  macos-test:
-    # The type of runner that the job will run on
+  install-legacy:
+    name: Install Legacy (macOS)
     runs-on: macos-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - name: Run install_and_configure.sh
+        run: bash install_and_configure.sh
 
-    # Runs  install script
-    - name: Run install_and_configure.sh
-      run: ${GITHUB_WORKSPACE}/install_and_configure.sh
+  install-bootstrap:
+    name: Install Bootstrap (macOS)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run bootstrap.sh --non-interactive
+        run: bash bootstrap.sh --non-interactive
+
+  test:
+    name: Tests (macOS)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run test suite
+        run: bash tests/run_tests.sh
