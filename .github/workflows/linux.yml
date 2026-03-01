@@ -13,6 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Pre-install yazi binary (avoids slow cargo build)
+        run: |
+          YAZI_VER=$(curl -sL "https://api.github.com/repos/sxyazi/yazi/releases/latest" \
+            | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
+          wget -q "https://github.com/sxyazi/yazi/releases/download/${YAZI_VER}/yazi-x86_64-unknown-linux-gnu.zip" \
+            -O /tmp/yazi.zip
+          unzip -q /tmp/yazi.zip -d /tmp/yazi
+          sudo cp /tmp/yazi/yazi-x86_64-unknown-linux-gnu/yazi /usr/local/bin/yazi
+          sudo chmod +x /usr/local/bin/yazi
       - name: Run install_and_configure.sh
         run: bash install_and_configure.sh
 
