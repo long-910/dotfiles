@@ -73,7 +73,7 @@ _install_core_apt() {
       pkg_install yazi
     elif has_cmd cargo; then
       info "Installing yazi via cargo..."
-      cargo install --locked yazi-fm
+      cargo install --locked yazi-fm || warn "yazi: cargo build failed; skipping"
     else
       warn "yazi: apt package not found and cargo unavailable; skipping"
     fi
