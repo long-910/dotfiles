@@ -84,6 +84,7 @@ _install_atuin() {
   if grep -q '\.atuin/bin/env\|atuin init' "${HOME}/.zshrc" 2>/dev/null; then
     info "Removing duplicate atuin init lines from ~/.zshrc..."
     sed -i '/^\. ".*\.atuin\/bin\/env"/d' "${HOME}/.zshrc"
+    # shellcheck disable=SC2016  # $() in single quotes is intentional (literal match)
     sed -i '/^eval "\$(atuin init/d'      "${HOME}/.zshrc"
     success "Cleaned up ~/.zshrc"
   fi

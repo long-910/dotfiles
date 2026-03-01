@@ -3,6 +3,7 @@
 # --disable-up-arrow keeps default ↑ behavior; use Ctrl-R for atuin search
 
 # Add ~/.atuin/bin to PATH when installed via curl installer
+# shellcheck source=/dev/null
 [ -f "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
 
 if command -v atuin >/dev/null 2>&1; then
