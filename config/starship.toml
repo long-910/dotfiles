@@ -6,7 +6,6 @@ format = """
 $git_state\
 $nodejs$python$rust$golang\
 $cmd_duration\
-$line_break\
 [└─](bold green)$character"""
 
 # Prompt character — $ for user, # for root (Kali style)
