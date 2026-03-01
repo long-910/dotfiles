@@ -1,0 +1,37 @@
+# .zshrc.local.example — Machine-specific and secret configuration
+#
+# Copy this file to ~/.zshrc.local (never committed to git)
+# It is sourced automatically if it exists.
+#
+# cp dotfiles/.zshrc.local.example ~/.zshrc.local
+
+# ── API Keys (never commit real values) ───────────────────────────────────────
+# export ANTHROPIC_API_KEY=""
+# export OPENAI_API_KEY=""
+# export GITHUB_TOKEN=""
+# export AWS_ACCESS_KEY_ID=""
+# export AWS_SECRET_ACCESS_KEY=""
+# export AWS_DEFAULT_REGION="ap-northeast-1"
+
+# ── Proxy settings ─────────────────────────────────────────────────────────────
+# export HTTP_PROXY="http://proxy.example.com:8080"
+# export HTTPS_PROXY="http://proxy.example.com:8080"
+# export NO_PROXY="localhost,127.0.0.1,.internal.example.com"
+
+# ── Machine-specific PATH additions ───────────────────────────────────────────
+# export PATH="${HOME}/.local/bin:${PATH}"
+# export PATH="/opt/custom-tool/bin:${PATH}"
+
+# ── Custom aliases ─────────────────────────────────────────────────────────────
+# alias vpn='sudo openconnect vpn.example.com'
+# alias work='cd ~/work/myproject'
+
+# ── SSH agent ─────────────────────────────────────────────────────────────────
+# if [ -z "$SSH_AUTH_SOCK" ]; then
+#   eval "$(ssh-agent -s)"
+#   ssh-add ~/.ssh/id_ed25519
+# fi
+
+# ── Work-specific git config ───────────────────────────────────────────────────
+# export GIT_AUTHOR_EMAIL="you@work.example.com"
+# export GIT_COMMITTER_EMAIL="you@work.example.com"

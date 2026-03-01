@@ -1,0 +1,27 @@
+# config/atuin/config.toml — Atuin shell history configuration
+
+# Search mode: fuzzy matching
+search_mode = "fuzzy"
+
+# Keybinding style: emacs (consistent with .zshrc bindkey -e)
+keymap_mode = "emacs"
+
+# Filter mode: search all history (not just current session/directory)
+filter_mode = "global"
+filter_mode_shell_up_key_binding = "global"
+
+# Do not sync automatically (opt-in sync only)
+auto_sync = false
+sync_frequency = "0"
+
+# Show stats in search UI
+show_preview = true
+
+# Inline mode (results below current line, not full-screen)
+inline_height = 20
+
+# Style
+style = "compact"
+
+# Exit immediately on unique match with Enter
+exit_mode = "return-original"
