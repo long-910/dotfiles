@@ -119,6 +119,14 @@ bash bootstrap.sh --list                # モジュール一覧表示
 | [lsd](https://github.com/lsd-rs/lsd) | アイコン付き `ls` 代替 |
 | [yazi](https://yazi-rs.github.io/) | ターミナルファイルマネージャ。`yy` コマンドで起動し、終了後そのディレクトリに移動 |
 
+> **WSL2 でアイコンが表示されない場合**
+> lsd のアイコン表示には [Nerd Fonts](https://www.nerdfonts.com/) が必要です。WSL2 ではターミナルが Windows 側で動作するため、フォントは **Windows 側にインストール** する必要があります。
+>
+> 1. [nerdfonts.com](https://www.nerdfonts.com/font-downloads) から Nerd Font をダウンロード（例：**CaskaydiaCove Nerd Font**、**JetBrainsMono Nerd Font**）
+> 2. `.ttf` ファイルを右クリック → **「すべてのユーザーのためにインストール」**
+> 3. Windows Terminal：**設定 → Ubuntu プロファイル → 外観 → フォントフェイス** → インストールしたフォントを選択（例：`CaskaydiaCove Nerd Font Mono`）
+> 4. ターミナルを再起動
+
 ---
 
 ## カスタマイズ
