@@ -119,6 +119,14 @@ tmux starts automatically when you open a new terminal and attaches to the most 
 | [lsd](https://github.com/lsd-rs/lsd) | `ls` alternative with icons |
 | [yazi](https://yazi-rs.github.io/) | Terminal file manager. Launch with `yy`, cd to exit dir |
 
+> **WSL2 — icons not displaying?**
+> lsd uses [Nerd Fonts](https://www.nerdfonts.com/) for file-type icons. On WSL2 the terminal runs on Windows, so the font must be installed on the **Windows** side:
+>
+> 1. Download a Nerd Font (e.g. **CaskaydiaCove Nerd Font**, **JetBrainsMono Nerd Font**) from [nerdfonts.com](https://www.nerdfonts.com/font-downloads)
+> 2. Right-click the `.ttf` file → **Install for all users**
+> 3. In Windows Terminal: **Settings → your Ubuntu profile → Appearance → Font face** → select the installed font (e.g. `CaskaydiaCove Nerd Font Mono`)
+> 4. Restart the terminal
+
 ---
 
 ## Customization

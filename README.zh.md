@@ -118,6 +118,14 @@ bash bootstrap.sh --list                # 列出所有模块
 | [lsd](https://github.com/lsd-rs/lsd) | 带图标的 `ls` 替代 |
 | [yazi](https://yazi-rs.github.io/) | 终端文件管理器。用 `yy` 启动，退出后自动切换目录 |
 
+> **WSL2 图标无法显示？**
+> lsd 的图标依赖 [Nerd Fonts](https://www.nerdfonts.com/)。在 WSL2 中，终端在 Windows 侧运行，因此字体必须安装在 **Windows 侧**：
+>
+> 1. 从 [nerdfonts.com](https://www.nerdfonts.com/font-downloads) 下载 Nerd Font（推荐：**CaskaydiaCove Nerd Font**、**JetBrainsMono Nerd Font**）
+> 2. 右键点击 `.ttf` 文件 → **"为所有用户安装"**
+> 3. Windows Terminal：**设置 → Ubuntu 配置文件 → 外观 → 字体**，选择已安装的字体（如 `CaskaydiaCove Nerd Font Mono`）
+> 4. 重启终端
+
 ---
 
 ## 自定义

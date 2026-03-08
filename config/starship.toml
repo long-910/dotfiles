@@ -2,10 +2,10 @@
 # Kali Linux style: ┌──(user@host)-[dir git]\n└─$
 
 format = """
-[┌──\\(](bold green)$username[@](bold green)$hostname[\\)─\\[](bold green)$directory[$git_branch$git_status](bold green)[\\]](bold green)\n\
-$git_state\
+[┌──\\(](bold green)$username[@](bold green)$hostname[\\)─\\[](bold green)$directory[$git_branch$git_status](bold green)[\\]](bold green)\
 $nodejs$python$rust$golang\
 $cmd_duration\
+\n$git_state\
 [└─](bold green)$character"""
 
 # Prompt character — $ for user, # for root (Kali style)
