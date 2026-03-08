@@ -3,10 +3,10 @@
 
 format = """
 [┌──\\(](bold green)$username[@](bold green)$hostname[\\)─\\[](bold green)$directory[$git_branch$git_status](bold green)[\\]](bold green)\
+$git_state\
 $nodejs$python$rust$golang\
 $cmd_duration\
-\n$git_state\
-[└─](bold green)$character"""
+\n[└─](bold green)$character"""
 
 # Prompt character — $ for user, # for root (Kali style)
 [character]
