@@ -70,11 +70,12 @@ _install_atuin() {
   else
     info "Installing atuin..."
     if [ "$PKG_MGR" = "brew" ]; then
-      brew install atuin
+      brew install atuin || warn "atuin install failed; skipping"
     else
       # ATUIN_NO_MODIFY_SHELL=1 prevents atuin's installer from appending
       # init code to ~/.zshrc — our .zshrc.d/atuin.zsh handles that instead.
-      ATUIN_NO_MODIFY_SHELL=1 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | ATUIN_NO_MODIFY_SHELL=1 sh
+      ATUIN_NO_MODIFY_SHELL=1 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | ATUIN_NO_MODIFY_SHELL=1 sh \
+        || warn "atuin install failed; skipping"
     fi
   fi
 

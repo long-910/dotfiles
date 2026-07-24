@@ -20,7 +20,7 @@ install_core() {
 }
 
 _install_core_brew() {
-  local tools=(lsd zsh emacs tmux htop neofetch yazi)
+  local tools=(lsd zsh emacs tmux htop yazi)
   for t in "${tools[@]}"; do
     if has_cmd "$t"; then
       info "${t} already installed"
@@ -28,6 +28,13 @@ _install_core_brew() {
       pkg_install "$t"
     fi
   done
+
+  # neofetch is archived upstream and removed from Homebrew; keep it optional.
+  if has_cmd neofetch; then
+    info "neofetch already installed"
+  else
+    brew install neofetch || warn "neofetch not available; skipping"
+  fi
 
   # tmux-mem-cpu-load
   if ! has_cmd tmux-mem-cpu-load; then
@@ -58,7 +65,7 @@ _install_core_apt() {
     info "lsd already installed"
   fi
 
-  local apt_tools=(zsh emacs tmux htop neofetch)
+  local apt_tools=(zsh emacs tmux htop)
   for t in "${apt_tools[@]}"; do
     if has_cmd "$t"; then
       info "${t} already installed"
@@ -66,6 +73,15 @@ _install_core_apt() {
       pkg_install "$t"
     fi
   done
+
+  # neofetch is archived upstream; install if the apt repo still carries it.
+  if has_cmd neofetch; then
+    info "neofetch already installed"
+  elif apt-cache show neofetch >/dev/null 2>&1; then
+    pkg_install neofetch
+  else
+    warn "neofetch not available via apt; skipping"
+  fi
 
   # yazi: try apt → fallback cargo
   if ! has_cmd yazi; then

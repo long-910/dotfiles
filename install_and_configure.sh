@@ -80,6 +80,29 @@ check_and_install() {
     fi
 }
 
+# 関数: パッケージを任意インストールする（失敗してもスクリプトを止めない）
+# 例: neofetch は upstream でアーカイブ・Homebrew から削除されたため必須にしない
+check_and_install_optional() {
+    package_name=$1
+    show_status "⚙️  Checking $package_name (optional)"
+    if command -v "$package_name" &> /dev/null; then
+        installed_version=$($package_name --version)
+        echo "✅ $package_name is already installed (Version: $installed_version)"
+        return 0
+    fi
+    show_status "🔧 Installing $package_name"
+    if [[ "$package_manager" == "brew" ]]; then
+        brew install "$package_name" || true
+    else
+        sudo $package_manager install -y "$package_name" || true
+    fi
+    if command -v "$package_name" &> /dev/null; then
+        echo "✅ $package_name installed successfully"
+    else
+        echo -e "\033[1;33m⚠️  $package_name is not available; skipping.\033[0m"
+    fi
+}
+
 # 関数: パッケージの設定ファイルを取得・適用する
 get_and_apply_config() {
     package_name=$1
@@ -144,11 +167,11 @@ echo -e
 check_and_install "htop"
 echo -e
 
-# neofetchのインストールと設定ファイルの取得・適用
-check_and_install "neofetch"
+# neofetchのインストールと設定ファイルの取得・適用（任意: upstream 削除済みのため非必須）
+check_and_install_optional "neofetch"
 echo -e
 
-# neofetchのインストールと設定ファイルの取得・適用
+# yaziのインストールと設定ファイルの取得・適用
 check_and_install "yazi"
 echo -e
 
